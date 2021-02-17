@@ -3,8 +3,7 @@ Event.destroy_all
 
 
 10.times do
-gus = User.create(name: Faker::Ancient.god, 
-	email: Faker::Internet.email,
+gus = User.create(email: Faker::Internet.email,
  	password: "password")
 end
 
