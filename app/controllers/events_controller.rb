@@ -7,11 +7,12 @@ class EventsController < ApplicationController
 
 	def new
 		@event = Event.create
-		@user = current_user.id
+		@user = current_user
 	end
 
 	def create
-		Event.create(title: params[:title], desc: params[:desc], date: params[:date], time: params[:time], user_id: @user)
+		@user = current_user
+		Event.create(title: params[:title], desc: params[:desc], date: params[:date], time: params[:time], user_id: @user.id)
 		redirect_to events_path
 	end
 
