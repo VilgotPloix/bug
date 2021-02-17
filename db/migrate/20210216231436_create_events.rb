@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
     	t.text :desc
     	t.date :date
     	t.time :time
+    	t.belongs_to :user
       t.timestamps
     end
   end

@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_02_16_231436) do
     t.text "desc"
     t.date "date"
     t.time "time"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
